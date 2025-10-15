@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>MyProject</groupId>
+    <artifactId>MyProject</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>api</module>
+        <module>ui</module>
+    </modules>
+
+    <properties>
+        <!-- JAVA и кодировка -->
+        <java.version>17</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Версии общих зависимостей -->
+        <testng.version>7.10.2</testng.version>
+        <lombok.version>1.18.38</lombok.version>
+        <postgresql.version>42.7.3</postgresql.version>
+
+        <!-- Версии API зависимостей -->
+        <rest-assured.version>5.5.0</rest-assured.version>
+        <rest.assured.schema>5.3.2</rest.assured.schema>
+
+        <!-- Версии UI зависимостей -->
+        <selenium.version>4.28.1</selenium.version>
+        <webdriver.version>6.1.1</webdriver.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+        </dependency>
+    </dependencies>
+</project>
