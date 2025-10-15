@@ -19,6 +19,5 @@ public class PetsServiceAssertions extends BasePage {
         softAssert.assertEquals(expectedResult.getPhotoUrls(), actualResult.get("photoUrls"));
         softAssert.assertEquals(expectedResult.getTags(), actualResult.get("tags"));
         softAssert.assertEquals(expectedResult.getStatus(), actualResult.get("status"));
-
     }
 }

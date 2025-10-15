@@ -11,18 +11,18 @@ import java.util.HashMap;
 public class GetDataFromDBPetService {
     private static final String URL_PET_DB = "petsUrlDB";
 
-    public HashMap<String, Object> getDataFromPet(int petId) {
+    public HashMap<String, Object> getDataFromPet(String petId) {
         HashMap<String, Object> petData = new HashMap<>();
         try (Connection connection = DBConnection.getInstance().getConnection(URL_PET_DB);
              PreparedStatement petDetailsQuery = connection.prepareStatement(
                      "SELECT id, category, name, photoUrls, tags, status" +
                              " FROM Pet WHERE ?"
              )) {
-            petDetailsQuery.setInt(1, petId);
+            petDetailsQuery.setString(1, petId);
 
             try (ResultSet resultSetPet = petDetailsQuery.executeQuery()) {
                 if (resultSetPet.next()) {
-                    petData.put("id", resultSetPet.getInt("id"));
+                    petData.put("id", resultSetPet.getString("id"));
                     petData.put("category", resultSetPet.getObject("category"));
                     petData.put("name", resultSetPet.getString("name"));
                     petData.put("photoUrls", resultSetPet.getArray("photoUrls"));

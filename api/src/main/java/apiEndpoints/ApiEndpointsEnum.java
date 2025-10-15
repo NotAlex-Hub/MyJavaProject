@@ -7,7 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ApiEndpointsEnum {
 
-    POST_PETS("v2/pet");
+    POST_PETS("v2/pet/");
 
     private final String url;
 }
