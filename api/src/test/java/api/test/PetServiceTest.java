@@ -45,6 +45,5 @@ public class PetServiceTest {
     @Test(description = "Добавление питомца без тела запроса")
     public void addPetWithoutBody() {
         petService.postAddPet(400);
-
     }
 }
