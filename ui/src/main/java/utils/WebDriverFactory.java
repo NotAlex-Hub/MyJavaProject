@@ -11,12 +11,11 @@ import java.util.Properties;
 
 public class WebDriverFactory {
     private WebDriver driver;
-    private final String HEADLESS = "--headless";
 
     public WebDriver getDriverFactory(String config) {
         Properties properties = PropertyReader.getProperties(config);
         boolean headlessMode = Boolean.parseBoolean(properties.getProperty("headlessMode"));
-
+        final String HEADLESS = "--headless";
         switch (properties.getProperty("browser")) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
